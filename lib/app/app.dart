@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:top_talent_agency/auth/login/login_screen.dart';
 import 'package:top_talent_agency/features/creator/creator_screen.dart';
-import 'package:top_talent_agency/features/home/home_screen.dart';
+import 'package:top_talent_agency/features/home/screen/home_screen.dart';
 
 class TopTalentAgency extends StatelessWidget {
   const TopTalentAgency({super.key});

@@ -72,7 +72,7 @@ class CustomBottomNav extends StatelessWidget {
             shape: BoxShape.circle,
             color: const Color(0xFF6D5DF6),
             border: isSelected ? Border.all(
-              color: const Color(0xffE8EEFF),
+              color: const Color(0xffA9C0FF),
               width: 4,
             ) : null,
           ),
