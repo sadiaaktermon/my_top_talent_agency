@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:top_talent_agency/features/manager/widget/custom_sortview.dart';
-import 'widget/custom_search.dart';
+import '../widget/custom_search.dart';
 
 class ManagersScreen extends StatelessWidget {
   const ManagersScreen({super.key});

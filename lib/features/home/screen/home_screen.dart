@@ -37,8 +37,14 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.grey[200],
               ),
               child: ClipOval(
-                child: SvgPicture.asset(
-                  'assets/sara.svg',
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  color: Colors.grey[300],
+                  child: Image.network(
+                    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

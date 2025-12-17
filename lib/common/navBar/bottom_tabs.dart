@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:top_talent_agency/features/alert/alerts_screen.dart';
 import 'package:top_talent_agency/features/creator/creator_screen.dart';
 import 'package:top_talent_agency/features/home/screen/home_screen.dart';
-import 'package:top_talent_agency/features/manager/managers_screen.dart';
+import 'package:top_talent_agency/features/manager/screen/managers_screen.dart';
 import 'package:top_talent_agency/features/more/more_screen.dart';
 import 'package:top_talent_agency/features/target/target_screen.dart';
 import 'bottom_tab_item.dart';
