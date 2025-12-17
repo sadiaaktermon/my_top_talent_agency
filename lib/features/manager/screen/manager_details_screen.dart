@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:top_talent_agency/common/navBar/custom_bottom_navbar.dart';
 import 'package:top_talent_agency/features/home/widget/custom_pichart.dart';
 import 'package:top_talent_agency/features/manager/screen/view_assign_creator_screen.dart';
 import 'package:top_talent_agency/features/manager/widget/actions_tile.dart';
 import 'package:top_talent_agency/features/manager/widget/ai_analysis_card.dart';
+import 'package:top_talent_agency/features/manager/widget/custom_last.dart';
 import 'package:top_talent_agency/features/manager/widget/live_chart.dart';
 import 'package:top_talent_agency/features/manager/widget/profile_card.dart';
 import 'package:top_talent_agency/features/manager/widget/progress_card.dart';
@@ -53,30 +53,15 @@ class ManagerDetailsScreen extends StatelessWidget {
 
             const SizedBox(height: 14),
 
-            ActionTile(
-              "View Assigned Creators",
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => const ViewAssignCreatorsScreen(),
-                  ),
-                );
-              },
-            ),
+            ActionTile(title: "View Assigned Creators", iconPath: 'assets/user.svg', onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (_) => const ViewAssignCreatorsScreen(),
+              ),
+              );
+            }),
 
-            // _actionTile(
-            //   "Add Creators",
-            //   onTap: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (_) => const AddCreatorsScreen(),
-            //       ),
-            //     );
-            //   },
-            // ),
-
+            SizedBox(height: 5),
+            ActionTile(title: "Add Creators", iconPath: 'assets/add.svg', onTap: (){}),
 
             const SizedBox(height: 18),
 
@@ -128,53 +113,11 @@ class ManagerDetailsScreen extends StatelessWidget {
             ),
 
             const SizedBox(height: 20),
-
             const LiveChart(),
-
 
             const SizedBox(height: 18),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Last Sync",
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.black54,
-                      ),
-                    ),
-                    SizedBox(height: 2),
-                    Text(
-                      "Today 10:17",
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: const Text(
-                    "Synced",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                )
-              ],
-            ),
+            CustomLast(),
           ],
         ),
       ),
@@ -182,6 +125,7 @@ class ManagerDetailsScreen extends StatelessWidget {
   }
 
 }
+
 
 
 

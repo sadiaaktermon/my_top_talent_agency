@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:top_talent_agency/features/manager/screen/manager_details_screen.dart';
+import 'package:top_talent_agency/features/manager/screen/manager_rank.dart';
 import 'package:top_talent_agency/features/manager/widget/custom_sortview.dart';
 import '../widget/custom_search.dart';
 
@@ -12,24 +14,24 @@ class ManagersScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(left: 20, right: 15),
+          padding: const EdgeInsets.only(left: 20, right: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(height: 50),
-              Text(
-                "Managers",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              const SizedBox(height: 50),
+          Center(
+            child: Text(
+              "Managers",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
                 ),
               ),
+            ),
               SizedBox(height: 20),
               CustomSearch(),
 
-              SizedBox(height: 20),
-
+              SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -42,6 +44,12 @@ class ManagersScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const ManagerRank(),
+                        ),
+                      );
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(right: 10.0),

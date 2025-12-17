@@ -57,7 +57,7 @@ class CreatorDetailsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
 
- const CustomPichart(),
+            const CustomPichart(),
             const SizedBox(height: 16),
 
             AiAnalysisCard(),

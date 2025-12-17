@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:top_talent_agency/features/manager/screen/manager_details_screen.dart';
+import 'package:top_talent_agency/features/manager/screen/managers_screen.dart';
+import 'package:top_talent_agency/features/manager/screen/view_assign_creator_screen.dart';
+import 'package:top_talent_agency/features/manager/widget/custom_text.dart';
 
 class CustomSortview extends StatelessWidget {
   const CustomSortview({super.key});
@@ -22,50 +25,51 @@ class CustomSortview extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
-          Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Container(
-                  width: 48,
-                  height: 48,
-                  color: Colors.grey[300],
-                  child: Container(
-                    width: 48,
-                    height: 48,
-                    color: Colors.grey[300],
-                    child: Image.network(
-                      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200',
-                      fit: BoxFit.cover,
+          InkWell(
+          onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(
+                 builder: (_) => const ManagerDetailsScreen(),
                     ),
-                  ),
-
-                ),
-              ),
-               SizedBox(width: 12),
-              GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ManagerDetailsScreen()));
+                  );
                 },
-                child: Expanded(
-                  child: Row(
-                    children:[ Text(
-                      'Sarah Johnson',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black87,
-                      ),
-                    ),
-                      SizedBox(width: 120),
-                      Icon(Icons.chevron_right, color: Colors.black, size: 28),
 
-                    ]
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.network(
+                'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200',
+                width: 48,
+                height: 48,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(width: 12),
+
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'Sarah Johnson',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
                   ),
+                  Icon(
+                    Icons.chevron_right,
+                    color: Colors.black,
+                    size: 28,
+                  )
+                  ]
                 ),
               ),
             ],
+          ),
           ),
            SizedBox(height: 10),
           Row(
@@ -136,9 +140,9 @@ class CustomSortview extends StatelessWidget {
           ),
             SizedBox(height: 10),
           Container(
-            height: 48,
+            height: 40,
             width: 349,
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -149,28 +153,33 @@ class CustomSortview extends StatelessWidget {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-
                 SvgPicture.asset(
                   'assets/user.svg',
-                  width: 16,
-                  height: 16,
+                  width: 17,
+                  height: 17,
+                  color: Colors.black,
                   fit: BoxFit.cover,
                 ),
                 Text(
-                  'Example Text',
+                  'View Assigned Creators',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
                 ),
                 Icon(
                   Icons.chevron_right,
                   color: Colors.black,
-                  size: 16,
+                  size: 18,
                 ),
               ],
             ),
           ),
+          SizedBox(height: 17),
+
+          CustomText(),
         ],
       ),
     );
   }
 }
+

@@ -34,8 +34,12 @@ class _CustomMinicontainerState extends State<CustomMinicontainer> {
       child: Container(
         padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
-          color: Color(0x80000000),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(15),
+          border: Border.all(
+            color: Colors.grey[300]!,
+            width: 1.5,
+          ),
         ),
         child: Container(
           width: 186,
@@ -43,10 +47,7 @@ class _CustomMinicontainerState extends State<CustomMinicontainer> {
           decoration: BoxDecoration(
             color: Color(0xffFFFFFF),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: widget.borderColor ?? Colors.transparent,
-              width: 1,
-            ),
+
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 10, top: 8, right: 10),

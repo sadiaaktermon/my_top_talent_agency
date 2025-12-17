@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:top_talent_agency/common/navBar/bottom_tab_item.dart';
-import '../core/roles.dart';
-import 'navBar/bottom_tabs.dart';
-import 'navBar/custom_bottom_navbar.dart';
+import 'package:top_talent_agency/common/navBar/bottom_tabs.dart';
+import 'package:top_talent_agency/common/navBar/custom_bottom_navbar.dart';
+import 'package:top_talent_agency/core/roles.dart';
 
 class AppShell extends StatefulWidget {
   const AppShell({super.key});
@@ -13,6 +13,9 @@ class AppShell extends StatefulWidget {
 
 class _AppShellState extends State<AppShell> {
   int index = 2;
+
+  final List<GlobalKey<NavigatorState>> _navigatorKeys =
+  List.generate(6, (_) => GlobalKey<NavigatorState>());
 
   List<BottomTabItem> get visibleTabs {
     return bottomTabs.where((tab) {
@@ -31,13 +34,29 @@ class _AppShellState extends State<AppShell> {
     return Scaffold(
       body: IndexedStack(
         index: index,
-        children: tabs.map((e) => e.page).toList(),
+        children: List.generate(tabs.length, (i) {
+          return Navigator(
+            key: _navigatorKeys[i],
+            onGenerateRoute: (settings) {
+              return MaterialPageRoute(
+                builder: (_) => tabs[i].page,
+              );
+            },
+          );
+        }),
       ),
+
       bottomNavigationBar: CustomBottomNav(
         tabs: tabs,
         currentIndex: index,
         onTap: (i) {
-          setState(() => index = i);
+          if (i == index) {
+            _navigatorKeys[i]
+                .currentState
+                ?.popUntil((route) => route.isFirst);
+          } else {
+            setState(() => index = i);
+          }
         },
       ),
     );

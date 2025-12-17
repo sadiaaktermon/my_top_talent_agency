@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:top_talent_agency/features/manager/screen/creator_details_screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:top_talent_agency/features/manager/screen/saras_rank.dart';
 
 
 class ViewAssignCreatorsScreen extends StatelessWidget {
@@ -26,12 +28,6 @@ class ViewAssignCreatorsScreen extends StatelessWidget {
           },
           icon: Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: Icon(Icons.filter_list, color: Colors.black,size: 20,),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
@@ -61,12 +57,33 @@ class ViewAssignCreatorsScreen extends StatelessWidget {
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Text(
-                  "Showing 120 of 120 creators",
-                  style: TextStyle(fontSize: 12, color: Colors.black54),
+                  "Showing 20 of 20 managers",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Color(0xff6A7282),
+                  ),
                 ),
-                Icon(Icons.auto_graph_sharp, size: 18),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const SarasRank (),
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: SvgPicture.asset(
+                      'assets/soil.svg',
+                      color: Color(0xff101828),
+                      width: 25,
+                      height: 25,
+                    ),
+                  ),
+                ),
               ],
             ),
 

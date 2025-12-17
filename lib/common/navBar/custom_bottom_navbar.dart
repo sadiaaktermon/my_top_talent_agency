@@ -15,20 +15,50 @@ class CustomBottomNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 70,
-      color: const Color(0xFF0F172A),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: List.generate(tabs.length, (i) {
-          final tab = tabs[i];
+    final centerIndex = tabs.indexWhere((e) => e.isCenter);
 
-          if (tab.isCenter) {
-            return _centerButton(i);
-          }
+    return SizedBox(
+      height: 96,
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.bottomCenter,
+        children: [
 
-          return _navItem(i, tab);
-        }),
+          /// 🔹 Bottom Bar
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 72,
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              decoration: const BoxDecoration(
+                color: Color(0xFF0F172A),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: List.generate(tabs.length, (i) {
+                  if (i == centerIndex) {
+                    // 🔥 exact space for center button
+                    return const Expanded(
+                      child: SizedBox(height: 1),
+                    );
+                  }
+
+                  return Expanded(
+                    child: _navItem(i, tabs[i]),
+                  );
+                }),
+              ),
+            ),
+          ),
+
+          ///  Center Button (perfect center)
+          Positioned(
+            bottom: 25,
+            child: _centerButton(centerIndex),
+          ),
+        ],
       ),
     );
   }
@@ -36,18 +66,20 @@ class CustomBottomNav extends StatelessWidget {
   Widget _navItem(int index, BottomTabItem tab) {
     final isSelected = index == currentIndex;
 
-    return GestureDetector(
+    return InkWell(
       onTap: () => onTap(index),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             tab.icon,
-            color: isSelected ? Color(0xff386BF6) : Colors.grey,
+            size: 22,
+            color: isSelected ? const Color(0xff386BF6) : Colors.grey,
           ),
           const SizedBox(height: 4),
           Text(
             tab.label,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 11,
               color: isSelected ? Colors.white : Colors.grey,
@@ -59,28 +91,34 @@ class CustomBottomNav extends StatelessWidget {
   }
 
   Widget _centerButton(int index) {
-    bool isSelected = currentIndex == index;
+    final isSelected = currentIndex == index;
 
     return GestureDetector(
       onTap: () => onTap(index),
-      child: Transform.translate(
-        offset: const Offset(0, -13),
-        child: Container(
-          height: 70,
-          width: 70,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: const Color(0xFF6D5DF6),
-            border: isSelected ? Border.all(
-              color: const Color(0xffA9C0FF),
-              width: 4,
-            ) : null,
-          ),
-          child: const Icon(
-            Icons.home_outlined,
-            color: Colors.white,
-            size: 26,
-          ),
+      child: Container(
+        height: 68,
+        width: 68,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: const Color(0xFF6D5DF6),
+          border: isSelected
+              ? Border.all(
+            color: const Color(0xffA9C0FF),
+            width: 4,
+          )
+              : null,
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 12,
+              offset: Offset(0, 6),
+            ),
+          ],
+        ),
+        child: const Icon(
+          Icons.home_outlined,
+          color: Colors.white,
+          size: 26,
         ),
       ),
     );
