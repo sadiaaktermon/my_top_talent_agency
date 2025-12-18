@@ -50,7 +50,6 @@ class ManagerDetailsScreen extends StatelessWidget {
               ),
               child: ProfileCard(),
             ),
-
             const SizedBox(height: 14),
 
             ActionTile(title: "View Assigned Creators", iconPath: 'assets/user.svg', onTap: (){
