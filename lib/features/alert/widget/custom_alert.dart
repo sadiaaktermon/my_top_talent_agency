@@ -61,7 +61,7 @@ class CustomAlert extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 12),
-              // Priority Badge
+
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
                 decoration: BoxDecoration(
@@ -78,7 +78,7 @@ class CustomAlert extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              // Category Badge
+
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
                 decoration: BoxDecoration(
@@ -99,11 +99,70 @@ class CustomAlert extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              Icon(
-                Icons.send,
-                color: Colors.black87,
-                size: 22,
-              ),
+              GestureDetector(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      TextEditingController _textController = TextEditingController();
+                      return AlertDialog(
+                        backgroundColor: Colors.white,
+                        title: const Text("Create notification"),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TextField(
+                              controller: _textController,
+                              decoration: InputDecoration(
+                                hintText: 'Type your message',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(21),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        actions: [
+                          GestureDetector(
+                            onTap: () {
+                              String reason = _textController.text.trim();
+                              if (reason.isNotEmpty) {
+                                print("Reason: $reason");
+                              }
+                              Navigator.of(context).pop();
+                            },
+                            child: Container(
+                              height: 45,
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                              decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Center(
+                                child: const Text(
+                                  "Send notification",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Icon(
+                  Icons.send,
+                  color: Colors.black87,
+                  size: 22,
+                ),
+              )
             ],
           ),
           const SizedBox(height: 5),
