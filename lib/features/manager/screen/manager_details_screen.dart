@@ -59,9 +59,64 @@ class ManagerDetailsScreen extends StatelessWidget {
               ),
               );
             }),
-
             SizedBox(height: 5),
-            ActionTile(title: "Add Creators", iconPath: 'assets/add.svg', onTap: (){}),
+            ActionTile(title: "Add Creators", iconPath: 'assets/add.svg', onTap: (){
+              showDialog(
+                context: context,
+                builder: (context) {
+                  TextEditingController _textController = TextEditingController();
+                  return AlertDialog(
+                    backgroundColor: Colors.white,
+                    title: const Text("User name"),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        TextField(
+                          controller: _textController,
+                          decoration: InputDecoration(
+                            hintText: 'Search',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(21),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    actions: [
+                      GestureDetector(
+                        onTap: () {
+                          String reason = _textController.text.trim();
+                          if (reason.isNotEmpty) {
+                            print("Reason: $reason");
+                          }
+                          Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          height: 45,
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Center(
+                            child: const Text(
+                              "Add",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              );
+            }),
 
             const SizedBox(height: 18),
 
@@ -71,7 +126,7 @@ class ManagerDetailsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
 
-               const CustomPichart(),
+            const CustomPichart(),
             const SizedBox(height: 16),
 
             AiAnalysisCard(),

@@ -139,45 +139,55 @@ class CustomSortview extends StatelessWidget {
             ],
           ),
             SizedBox(height: 10),
-          Container(
-            height: 40,
-            width: 349,
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Colors.grey[300]!,
-                width: 1,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const ViewAssignCreatorsScreen(),
+                ),
+              );
+            },
+            child: Container(
+              height: 40,
+              width: 349,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.grey[300]!,
+                  width: 1,
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/user.svg',
+                    width: 17,
+                    height: 17,
+                    color: Colors.black,
+                    fit: BoxFit.cover,
+                  ),
+                  const Text(
+                    'View Assigned Creators',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
+                  ),
+                  const Icon(
+                    Icons.chevron_right,
+                    color: Colors.black,
+                    size: 18,
+                  ),
+                ],
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  'assets/user.svg',
-                  width: 17,
-                  height: 17,
-                  color: Colors.black,
-                  fit: BoxFit.cover,
-                ),
-                Text(
-                  'View Assigned Creators',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
-                ),
-                Icon(
-                  Icons.chevron_right,
-                  color: Colors.black,
-                  size: 18,
-                ),
-              ],
-            ),
           ),
-          SizedBox(height: 17),
 
+          SizedBox(height: 17),
           CustomText(),
-        ],
+          ]
       ),
     );
   }
