@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:top_talent_agency/core/roles.dart';
 import 'package:top_talent_agency/features/home/widget/custom_pichart.dart';
 import 'package:top_talent_agency/features/manager/screen/view_assign_creator_screen.dart';
 import 'package:top_talent_agency/features/manager/widget/actions_tile.dart';
@@ -54,7 +55,7 @@ class ManagerDetailsScreen extends StatelessWidget {
 
             ActionTile(title: "View Assigned Creators", iconPath: 'assets/user.svg', onTap: (){
               Navigator.push(context, MaterialPageRoute(
-                builder: (_) => const ViewAssignCreatorsScreen(),
+                builder: (_) => const ViewAssignCreatorsScreen(role: UiUserRole.admin,),
               ),
               );
             }),

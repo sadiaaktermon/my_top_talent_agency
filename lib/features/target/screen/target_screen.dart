@@ -8,23 +8,23 @@ class TargetsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: Text(
+          "Total targets for Agency",
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        ),
         body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.only(left: 20, right: 15),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                  const SizedBox(height: 50),
-              Center(
-                child: Text(
-                  "Total targets for Agency",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-             SizedBox(height: 30),
              CustomTargets(),
 
              SizedBox(height: 20),

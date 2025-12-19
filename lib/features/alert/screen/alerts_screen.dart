@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:top_talent_agency/core/roles.dart';
 import 'package:top_talent_agency/features/alert/widget/custom_alert.dart';
 import 'package:top_talent_agency/features/alert/widget/custom_medium.dart';
 
 class AlertsScreen extends StatefulWidget {
-  const AlertsScreen({super.key});
+  final UiUserRole role;
+
+  const AlertsScreen({super.key, required this.role});
 
   @override
   State<AlertsScreen> createState() => _AlertsScreenState();
@@ -11,28 +14,42 @@ class AlertsScreen extends StatefulWidget {
 
 class _AlertsScreenState extends State<AlertsScreen> {
   int selectedIndex = 0;
-  final List<String> tabs = ['All', 'Under', 'Spike', 'Target', 'System'];
+
+  late final List<String> tabs;
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (widget.role == UiUserRole.manager) {
+      tabs = ['All', 'Under', 'Spike'];
+    } else {
+      tabs = ['All', 'Under', 'Spike', 'Target', 'System'];
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 50),
-              Center(
-                child: Text(
-                  "Alerts",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text(
+          "Alerts",
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+                  body: SingleChildScrollView(
+                  child: Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 15),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+
               SizedBox(height: 15),
               CustomMedium(),
 
@@ -119,10 +136,11 @@ class _AlertsScreenState extends State<AlertsScreen> {
                 containerColor: Color(0xffFFF9F2),
                 containerBorderColor: Color(0xffFFD6A7),
               ),
-            ],
-          ),
-        ),
-      ),
-    );
+              ]
+              ),
+              )
+              ),
+
+          );
   }
 }

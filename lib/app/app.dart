@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:top_talent_agency/auth/login/login_screen.dart';
+import 'package:top_talent_agency/features/auth/screens/login_screen.dart';
 import 'package:top_talent_agency/features/creator/creator_screen.dart';
 import 'package:top_talent_agency/features/home/screen/home_screen.dart';
 

@@ -4,8 +4,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:top_talent_agency/features/manager/screen/saras_rank.dart';
 
 
+import 'package:top_talent_agency/core/roles.dart';
+
 class ViewAssignCreatorsScreen extends StatelessWidget {
-  const ViewAssignCreatorsScreen({super.key});
+  final UiUserRole role;
+
+  const ViewAssignCreatorsScreen({
+    super.key,
+    required this.role,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +21,31 @@ class ViewAssignCreatorsScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: const Text(
-          "Sarah’s creators",
-          style: TextStyle(
+        title: Text(
+          role == UiUserRole.manager
+              ? "My Creators"
+              : "Sarah’s creators",
+          style: const TextStyle(
             color: Colors.black,
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
         ),
-        leading: IconButton(
+
+        leading: role == UiUserRole.manager
+            ? null
+            : IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 18,
+          ),
         ),
       ),
+
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
         child: Column(

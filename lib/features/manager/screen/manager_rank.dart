@@ -12,25 +12,23 @@ class _ManagerRankState extends State<ManagerRank> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xffF4F5F7),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Center(
-          child: const Text(
-            "Rank of managers",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
+        ),
+        title: const Text(
+          "Rank of managers",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
       body: SingleChildScrollView(

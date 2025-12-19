@@ -9,9 +9,9 @@ class CustomTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        hintText: hintText,  // Set the hintText from the constructor
+        hintText: hintText,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12), // Remove const
+          borderRadius: BorderRadius.circular(12),
         ),
       ),
     );

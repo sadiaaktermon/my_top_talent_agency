@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:top_talent_agency/auth/custom_screen.dart';
-import 'package:top_talent_agency/auth/reset/reset_screen.dart';
-import 'package:top_talent_agency/auth/verify/custom_code.dart';
+import 'package:top_talent_agency/features/auth/widgets/custom_screen.dart';
+import 'package:top_talent_agency/features/auth/screens/reset_screen.dart';
+import 'package:top_talent_agency/features/auth/screens/custom_code.dart';
 import 'package:top_talent_agency/common/custom_button.dart';
 
 class VerifyScreen extends StatefulWidget {

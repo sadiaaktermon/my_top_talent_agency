@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:top_talent_agency/auth/custom_screen.dart';
-import 'package:top_talent_agency/auth/custom_textfield.dart';
-import 'package:top_talent_agency/auth/verify/verify_screen.dart';
+import 'package:top_talent_agency/features/auth/widgets/custom_screen.dart';
+import 'package:top_talent_agency/features/auth/widgets/custom_textfield.dart';
+import 'package:top_talent_agency/features/auth/screens/verify_screen.dart';
 import 'package:top_talent_agency/common/custom_button.dart';
 
 class ForgotScreen extends StatefulWidget {

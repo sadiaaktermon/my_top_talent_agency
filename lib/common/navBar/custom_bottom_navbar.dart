@@ -24,7 +24,6 @@ class CustomBottomNav extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
 
-          /// 🔹 Bottom Bar
           Positioned(
             bottom: 0,
             left: 0,
@@ -39,7 +38,6 @@ class CustomBottomNav extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: List.generate(tabs.length, (i) {
                   if (i == centerIndex) {
-                    // 🔥 exact space for center button
                     return const Expanded(
                       child: SizedBox(height: 1),
                     );

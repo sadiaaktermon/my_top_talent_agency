@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:top_talent_agency/core/roles.dart';
 import 'package:top_talent_agency/features/manager/screen/manager_details_screen.dart';
 import 'package:top_talent_agency/features/manager/screen/managers_screen.dart';
 import 'package:top_talent_agency/features/manager/screen/view_assign_creator_screen.dart';
@@ -144,7 +145,7 @@ class CustomSortview extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const ViewAssignCreatorsScreen(),
+                  builder: (_) => const ViewAssignCreatorsScreen(role: UiUserRole.admin,),
                 ),
               );
             },
