@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget {
             bottomRight: Radius.circular(20),
           ),
           child: AppBar(
+            centerTitle: true,
             backgroundColor: Color(0xff101828),
             elevation: 0,
             toolbarHeight: 100,

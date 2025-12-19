@@ -17,6 +17,7 @@ class ManagerDetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffF4F5F7),
       appBar: AppBar(
+        centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(onPressed: (){

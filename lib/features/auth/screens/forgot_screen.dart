@@ -19,55 +19,52 @@ class _ForgotScreenState extends State<ForgotScreen> {
         svgPath: 'assets/Group.svg',
         svgHeight: 180,
         svgWidth: 130,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-            SizedBox(height: 25),
-              Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+          SizedBox(height: 25),
+            Center(
 
-                child: Text(
-                  "Forgot password?",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              SizedBox(height: 10),
-
-              Padding(
-                padding: const EdgeInsets.only(left: 15.0), // adjust as needed
-                child: Text(
-                  "Enter your email and we will send you a \n                  verification code.",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-              SizedBox(height: 30),
-
-              Text(
-                "Email",
+              child: Text(
+                "Forgot password?",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey[800],
                 ),
               ),
-              SizedBox(height: 10),
-              CustomTextfield(hintText: "Enter your email address"),
+            ),
+            SizedBox(height: 10),
 
-              SizedBox(height: 30),
-              CustomButton(text: "Send code", onTap: (){
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => const VerifyScreen()));
-              }),
-            ],
-          ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0), // adjust as needed
+              child: Text(
+                "Enter your email and we will send you a \n                  verification code.",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+
+            Text(
+              "Email",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[800],
+              ),
+            ),
+            SizedBox(height: 10),
+            CustomTextfield(hintText: "Enter your email address"),
+
+            SizedBox(height: 30),
+            CustomButton(text: "Send code", onTap: (){
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => const VerifyScreen()));
+            }),
+          ],
         ),
       ),
     );

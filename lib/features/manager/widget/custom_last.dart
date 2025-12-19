@@ -14,7 +14,7 @@ class CustomLast extends StatelessWidget {
       children: [
         Container(
           height: 92,
-          width: 185,
+          width: 175,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -27,7 +27,7 @@ class CustomLast extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
+          SizedBox(height: 5),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -47,7 +47,7 @@ class CustomLast extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           const Text(
             "Today 10:17",
             style: TextStyle(
@@ -59,10 +59,11 @@ class CustomLast extends StatelessWidget {
         ],
       ),
         ),
+        SizedBox(width: 10),
 
         Container(
           height: 92,
-          width: 185,
+          width: 175,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -76,6 +77,7 @@ class CustomLast extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: const [
+                SizedBox(height: 5),
                 Text(
                   "Status",
                   style: TextStyle(

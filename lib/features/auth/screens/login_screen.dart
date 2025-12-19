@@ -28,9 +28,11 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Welcome to Top Talent Agency",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            Center(
+              child: const Text(
+                "Welcome to Top Talent Agency",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              ),
             ),
 
             const SizedBox(height: 16),

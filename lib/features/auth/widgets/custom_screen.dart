@@ -31,7 +31,7 @@ class _CustomScreenState extends State<CustomScreen> {
 
           // Positioned SVG image at the top
           Positioned(
-            top: 110,  // Adjust this to control the vertical position of the image
+            top: 110,
             left: 10,
             right: 10,
             child: Center(
