@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:top_talent_agency/features/auth/widgets/custom_screen.dart';
 import 'package:top_talent_agency/features/auth/screens/reset_screen.dart';
-import 'package:top_talent_agency/features/auth/screens/custom_code.dart';
 import 'package:top_talent_agency/common/custom_button.dart';
 
 class VerifyScreen extends StatefulWidget {
@@ -47,22 +47,25 @@ class _VerifyScreenState extends State<VerifyScreen> {
             ),
           ),
                 SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomCode(controller: TextEditingController()),
-                    SizedBox(width: 12),
-                    CustomCode(controller: TextEditingController()),
-                    SizedBox(width: 12),
-                    CustomCode(controller: TextEditingController()),
-                    SizedBox(width: 12),
-                    CustomCode(controller: TextEditingController()),
-                    SizedBox(width: 12),
-                    CustomCode(controller: TextEditingController()),
-                    SizedBox(width: 12),
-                    CustomCode(controller: TextEditingController()),
-                  ],
+                PinCodeTextField(
+                  length: 6,
+                  obscureText: false,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  keyboardType: TextInputType.number,
+                  animationType: AnimationType.fade,
+                  pinTheme: PinTheme(
+                      shape: PinCodeFieldShape.box,
+                      borderRadius: BorderRadius.circular(8),
+                      fieldHeight: 50,
+                      fieldWidth: 40,
+                      activeColor: Colors.green,
+                      selectedColor: Colors.black,
+                      inactiveColor: Colors.grey),
+                  animationDuration: const Duration(milliseconds: 300),
+                 // controller: OTPController,
+                  appContext: context,
                 ),
+
                 SizedBox(height: 20),
                 Align(
                   alignment: Alignment.centerRight,
@@ -91,9 +94,8 @@ class _VerifyScreenState extends State<VerifyScreen> {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => const ResetScreen()));
                 })
-
               ]
-                    ),
+           ),
       ),
     );
   }

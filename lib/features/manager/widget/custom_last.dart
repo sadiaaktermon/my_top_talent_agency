@@ -74,27 +74,48 @@ class CustomLast extends StatelessWidget {
             ),
           ),
           child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
-                SizedBox(height: 5),
-                Text(
-                  "Status",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black54,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 5),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SvgPicture.asset(
+                    'assets/circle.svg',
+                    height: 17,
+                    width: 17,
                   ),
-                ),
-                SizedBox(height: 16),
-                Text(
-                  "synced",
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
+                  const SizedBox(width: 8),
+                  const Text(
+                    "Status",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.black54,
+                    ),
                   ),
-                ),
-              ]
+                ],
+              ),
+              const SizedBox(height: 20),
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.03,
+              vertical: MediaQuery.of(context).size.height * 0.005,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text(
+              "synced",
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.width * 0.032,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+                 ),
+               ),
+             ),
+            ],
           ),
         ),
       ],

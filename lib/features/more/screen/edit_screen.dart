@@ -60,29 +60,28 @@ class EditScreen extends StatelessWidget {
                      ),
                    ]
                  ),
-              const SizedBox(height: 13),
+              const SizedBox(height: 7),
               GestureDetector(
                 onTap: () {},
                 child: Text(
                   'Change photo',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 13,
                     fontWeight: FontWeight.w500,
                     color: Colors.black87,
                     decoration: TextDecoration.underline,
                      ),
                    ),
                  ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 30),
                 Text(
                   'Admin Details',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 19,
                     color: Colors.black,
                   ),
                 ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               CustomAlign(title: "Admin name"),
 
               SizedBox(height: 5),

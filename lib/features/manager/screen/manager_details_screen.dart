@@ -120,20 +120,17 @@ class ManagerDetailsScreen extends StatelessWidget {
             }),
 
             const SizedBox(height: 18),
-
             const Text(
               "December Overview",
               style: TextStyle(fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 10),
-
             const CustomPichart(),
-            const SizedBox(height: 16),
 
+            const SizedBox(height: 16),
             AiAnalysisCard(),
 
             const SizedBox(height: 18),
-
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -147,8 +144,8 @@ class ManagerDetailsScreen extends StatelessWidget {
                     "Target vs Actual (Current Month)",
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  const SizedBox(height: 10),
 
+                  const SizedBox(height: 10),
                   ProgressCard(
                     subtitle: "120.0%",
                     title: "Coins",
@@ -158,7 +155,6 @@ class ManagerDetailsScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 10),
-
                   ProgressCard(
                     subtitle: "114.4%",
                     title: "Hours",
@@ -174,7 +170,6 @@ class ManagerDetailsScreen extends StatelessWidget {
             const LiveChart(),
 
             const SizedBox(height: 18),
-
             CustomLast(),
           ],
         ),
