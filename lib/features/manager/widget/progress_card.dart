@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget ProgressCard({
   required String title,
+  required String subtitle,
   required double percent,
   required String left,
   required String right,
@@ -15,7 +16,26 @@ Widget ProgressCard({
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+              ),
+            ),
+            Text(
+              subtitle,
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
+              ),
+            ),
+          ],
+        ),
+
         const SizedBox(height: 8),
         LinearProgressIndicator(
           value: percent > 1 ? 1 : percent,

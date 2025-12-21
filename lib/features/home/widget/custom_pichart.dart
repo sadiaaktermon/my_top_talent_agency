@@ -36,19 +36,19 @@ class CustomPichart extends StatelessWidget {
                   PieChart(
                     PieChartData(
                       sectionsSpace: 0,
-                      centerSpaceRadius: 56,
-                      startDegreeOffset: -145,
+                      centerSpaceRadius: 57,
+                      startDegreeOffset: -115,
                       sections: [
                         PieChartSectionData(
-                          value: 45,
+                          value: 43,
                           color: Color(0xFF9B8DD9),  // Color for the first section
-                          radius: 8,
+                          radius: 7.5,
                           showTitle: false,
                         ),
                         PieChartSectionData(
-                          value: 25,
+                          value: 30,
                           color: Color(0xFFE0E0E0),  // Color for the second section
-                          radius: 8,
+                          radius: 7.5,
                           showTitle: false,
                         ),
                       ],

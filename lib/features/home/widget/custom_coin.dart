@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomCoin extends StatelessWidget {
   const CustomCoin({
@@ -36,7 +37,12 @@ class CustomCoin extends StatelessWidget {
           // Total Coins Section
           Row(
             children: [
-              Icon(Icons.monetization_on, color: Colors.amber, size: 28),
+              SvgPicture.asset(
+                'assets/coin.svg',
+                width: 22,
+                height: 22,
+                color: Color(0xffFDC700),
+              ),
               const SizedBox(width: 8),
               Text(
                 'Total Coins',
@@ -78,12 +84,12 @@ class CustomCoin extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
 
           // Total Hours Section
           Row(
             children: [
-              Icon(Icons.access_time, color: Colors.blue, size: 28),
+              Icon(Icons.access_time, color: Colors.blue, size: 22),
               const SizedBox(width: 8),
               Text(
                 'Total Hours',

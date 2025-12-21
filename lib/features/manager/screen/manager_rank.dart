@@ -21,12 +21,9 @@ class _ManagerRankState extends State<ManagerRank> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
-        ),
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon: ( Icon(Icons.arrow_back_ios, color: Colors.black, size: 18))),
         title: const Text(
           "Rank of managers",
           style: TextStyle(

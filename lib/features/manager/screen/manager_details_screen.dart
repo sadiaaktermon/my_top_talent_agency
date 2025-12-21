@@ -150,6 +150,7 @@ class ManagerDetailsScreen extends StatelessWidget {
                   const SizedBox(height: 10),
 
                   ProgressCard(
+                    subtitle: "120.0%",
                     title: "Coins",
                     percent: 1.2,
                     left: "13,057 / 10,881",
@@ -159,6 +160,7 @@ class ManagerDetailsScreen extends StatelessWidget {
                   const SizedBox(height: 10),
 
                   ProgressCard(
+                    subtitle: "114.4%",
                     title: "Hours",
                     percent: 1.144,
                     left: "143h / 125h",
