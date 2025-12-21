@@ -62,7 +62,8 @@ class CustomAssign extends StatelessWidget {
             const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.only(right: 18.0),
-              child: CustomTextfield(hintText: "Enter initial password"),
+              child: CustomTextfield(hintText: "Enter initial password",
+              isPassword: true),
             ),
 
             SizedBox(height: 20),

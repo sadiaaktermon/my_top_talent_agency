@@ -27,125 +27,164 @@ class CustomSortview extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
-          onTap: () {
-               Navigator.push(
+            onTap: () {
+              Navigator.push(
                 context,
                 MaterialPageRoute(
-                 builder: (_) => const ManagerDetailsScreen(),
-                    ),
-                  );
-                },
-
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.network(
-                'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200',
-                width: 48,
-                height: 48,
-                fit: BoxFit.cover,
-              ),
+                  builder: (_) => const ManagerDetailsScreen(),
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.network(
+                    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200',
+                    width: 48,
+                    height: 48,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Sarah Johnson',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      Icon(
+                        Icons.chevron_right,
+                        color: Colors.black,
+                        size: 28,
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(width: 12),
+          ),
 
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    'Sarah Johnson',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 56,
+                    decoration: BoxDecoration(
+                    color: Colors.blue[50],
+                    borderRadius: BorderRadius.circular(8),),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Text(
+                          '120',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff1C398E),
+                          ),
+                        ),
+                        Text(
+                          'Creators',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xff1C398E),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Icon(
-                    Icons.chevron_right,
-                    color: Colors.black,
-                    size: 28,
-                  )
-                  ]
                 ),
               ),
-            ],
-          ),
-          ),
-           SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell(
-                onTap: () {
-                },
+
+              const SizedBox(width: 8),
+
+              Expanded(
                 child: Container(
-                  width: 111,
                   height: 56,
-                  color: Colors.blue[50],
+                  decoration: BoxDecoration(
+                  color: Colors.green[50],
+                  borderRadius: BorderRadius.circular(8),),
+
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text(
-                        '120',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xff1C398E)),
+                        '72',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff0D542B),
+                        ),
                       ),
                       Text(
-                        'Creators',
-                        style: TextStyle(fontSize: 12, color: Color(0xff1C398E)),
+                        'Excellent',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xff0D542B),
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
-              Container(
-                width: 111,
-                height: 56,
-                color: Colors.green[50],
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      '72',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xff0D542B)),
-                    ),
-                    Text(
-                      'Excellent',
-                      style: TextStyle(fontSize: 12, color: Color(0xff0D542B)),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                width: 111,
-                height: 56,
-                color: Colors.red[50],
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      '48',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xff82181A)),
-                    ),
-                    Text(
-                      'At Risk',
-                      style: TextStyle(fontSize: 12, color: Color(0xff82181A)),
-                    ),
-                  ],
+
+              const SizedBox(width: 8),
+
+              Expanded(
+                child: Container(
+                  height: 56,
+                  decoration: BoxDecoration(
+                  color: Colors.red[50],
+                  borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '48',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff82181A),
+                        ),
+                      ),
+                      Text(
+                        'At Risk',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xff82181A),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
-            SizedBox(height: 10),
+
+          const SizedBox(height: 10),
+
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const ViewAssignCreatorsScreen(role: UiUserRole.admin,),
+                  builder: (_) => const ViewAssignCreatorsScreen(
+                    role: UiUserRole.admin,
+                  ),
                 ),
               );
             },
@@ -174,7 +213,11 @@ class CustomSortview extends StatelessWidget {
                   ),
                   const Text(
                     'View Assigned Creators',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
                   ),
                   const Icon(
                     Icons.chevron_right,
@@ -186,11 +229,10 @@ class CustomSortview extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 17),
+          const SizedBox(height: 17),
           CustomText(),
-          ]
+        ],
       ),
     );
   }
 }
-

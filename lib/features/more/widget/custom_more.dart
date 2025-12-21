@@ -82,13 +82,26 @@ class CustomMore extends StatelessWidget {
                       ),
                       if (item.badge != null) ...[
                         const SizedBox(width: 12),
-                        Text(
+
+                       Container(
+                           padding: EdgeInsets.symmetric(
+                           horizontal: 14, vertical: 6),
+                           decoration: BoxDecoration(
+                           color: Colors.white,
+                           borderRadius: BorderRadius.circular(8),
+                           border: Border.all(
+                           color: Colors.grey[200]!,
+                           width: 1,
+                           ),
+                          ),
+                          child:Text(
                           item.badge!,
                           style: TextStyle(
                             fontSize: 13,
                             color: Colors.black87,
                           ),
                         ),
+                       ),
                       ],
                     ],
                   ),

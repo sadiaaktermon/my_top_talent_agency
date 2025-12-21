@@ -27,9 +27,12 @@ class CustomMinicontainer extends StatefulWidget {
 class _CustomMinicontainerState extends State<CustomMinicontainer> {
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+    final double w = size.width;
+    final double h = size.height;
+
     return GestureDetector(
       onTap: () {
-        print('Container tapped!');
       },
       child: Container(
         padding: const EdgeInsets.all(2),
@@ -42,8 +45,8 @@ class _CustomMinicontainerState extends State<CustomMinicontainer> {
           ),
         ),
         child: Container(
-          width: 186,
-          height: 161,
+          width: w * 0.45,
+          height: h * 0.20,
           decoration: BoxDecoration(
             color: Color(0xffFFFFFF),
             borderRadius: BorderRadius.circular(12),
@@ -55,7 +58,7 @@ class _CustomMinicontainerState extends State<CustomMinicontainer> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
+                SizedBox(height: 10),
                 Row(
                   children: [
                     SvgPicture.asset(
@@ -63,19 +66,20 @@ class _CustomMinicontainerState extends State<CustomMinicontainer> {
                       width: 25,
                       height: 25,
                     ),
+
                     const SizedBox(width: 10),
                     Text(
                       widget.title,
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
 
+                const SizedBox(height: 25),
                 Text(
                   NumberFormat('#,###').format(widget.number),
                   style: const TextStyle(
@@ -84,8 +88,8 @@ class _CustomMinicontainerState extends State<CustomMinicontainer> {
                     color: Colors.black,
                   ),
                 ),
-                const SizedBox(height: 20),
 
+                const SizedBox(height: 25),
                 Text(
                   widget.subtitle,
                   style: TextStyle(

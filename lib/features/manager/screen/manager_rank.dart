@@ -11,6 +11,10 @@ class ManagerRank extends StatefulWidget {
 class _ManagerRankState extends State<ManagerRank> {
   @override
   Widget build(BuildContext context) {
+    final double sw = MediaQuery.of(context).size.width;
+    final double imageSize = sw * 0.18;
+    final double rankFont = sw * 0.1;
+
     return Scaffold(
       backgroundColor: const Color(0xffF4F5F7),
       appBar: AppBar(
@@ -21,7 +25,7 @@ class _ManagerRankState extends State<ManagerRank> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
         ),
         title: const Text(
           "Rank of managers",
@@ -35,53 +39,57 @@ class _ManagerRankState extends State<ManagerRank> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
+              padding: EdgeInsets.symmetric(horizontal: sw * 0.08),
               child: Row(
                 children: [
-                  Column(
+              Expanded(
+                child:Column(
                     children: [
                       Stack(
-                        clipBehavior: Clip.none, // text  overlap
+                        clipBehavior: Clip.none,
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.network(
                               'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200',
-                              width: 65,
-                              height: 65,
+                              width: imageSize,
+                              height: imageSize,
                               fit: BoxFit.cover,
                             ),
                           ),
                           Positioned(
-                            top: -35,
-                            left: 45,
-                              child: const Text(
-                                '1',
-                                style: TextStyle(
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xff679929),
-                                ),
+                            top: -rankFont * 0.6,
+                            right: -rankFont * 0.2,
+                            child: Text(
+                              '1',
+                              style: TextStyle(
+                                fontSize: rankFont,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xff679929),
                               ),
                             ),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 8),
                       Text(
                         'Sophie Kihm',
-                        style: const TextStyle(
-                          fontSize: 15,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: sw * 0.04,
                           color: Colors.black87,
                         ),
                       ),
                     ],
+                ),
                   ),
-                  const SizedBox(width: 25),
 
-                  Column(
+                 Expanded(
+                  child:Column(
                     children: [
                       Stack(
                         clipBehavior: Clip.none,
@@ -90,38 +98,41 @@ class _ManagerRankState extends State<ManagerRank> {
                             borderRadius: BorderRadius.circular(8),
                             child: Image.network(
                               'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200',
-                              width: 65,
-                              height: 65,
+                              width: imageSize,
+                              height: imageSize,
                               fit: BoxFit.cover,
                             ),
                           ),
                           Positioned(
-                            top: -35,
-                            left: 45,
-                              child: const Text(
-                                '2',
-                                style: TextStyle(
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xffD08700),
-                                ),
+                            top: -rankFont * 0.6,
+                            right: -rankFont * 0.2,
+                            child: Text(
+                              '2',
+                              style: TextStyle(
+                                fontSize: rankFont,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xffD08700),
                               ),
                             ),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 8),
                       Text(
                         'Lisa Anderson',
-                        style: const TextStyle(
-                          fontSize: 15,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: sw * 0.04,
                           color: Colors.black87,
                         ),
                       ),
                     ],
+                   ),
                   ),
-                  const SizedBox(width: 20),
 
-                  Column(
+                Expanded(
+                  child:Column(
                     children: [
                       Stack(
                         clipBehavior: Clip.none,
@@ -130,40 +141,43 @@ class _ManagerRankState extends State<ManagerRank> {
                             borderRadius: BorderRadius.circular(8),
                             child: Image.network(
                               'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200',
-                              width: 65,
-                              height: 65,
+                              width: imageSize,
+                              height: imageSize,
                               fit: BoxFit.cover,
                             ),
                           ),
                           Positioned(
-                            top: -35,
-                            left: 45,
-                              child: const Text(
-                                '3',
-                                style: TextStyle(
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xff306B9C),
-                                ),
+                            top: -rankFont * 0.6,
+                            right: -rankFont * 0.2,
+                            child: Text(
+                              '3',
+                              style: TextStyle(
+                                fontSize: rankFont,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xff306B9C),
                               ),
                             ),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 8),
                       Text(
                         'Van Dijk',
-                        style: const TextStyle(
-                          fontSize: 15,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: sw * 0.04,
                           color: Colors.black87,
                         ),
                       ),
                     ],
+                   ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 30),
 
+            const SizedBox(height: 30),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               height: 500,

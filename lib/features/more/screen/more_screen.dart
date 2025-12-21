@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:top_talent_agency/common/custom_button.dart';
 import 'package:top_talent_agency/core/roles.dart';
 import 'package:top_talent_agency/features/more/screen/add_screen.dart';
+import 'package:top_talent_agency/features/more/screen/edit_screen.dart';
 import 'package:top_talent_agency/features/more/widget/custom_more.dart';
 
 class MoreScreen extends StatelessWidget {
@@ -94,22 +95,30 @@ class MoreScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        // Edit
-                        Container(
+                    InkWell(
+                      borderRadius: BorderRadius.circular(8),
+                      onTap: () { Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const EditScreen(role: UiUserRole.admin,),
+                        ),
+                      );
+                        },
+                      child:Container(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
+                          horizontal: 16, vertical: 8),
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Text(
-                            'Edit',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black87,
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                           ),
+                          child: Text('Edit', style:
+                          TextStyle(
+                          fontSize: 14,
+                          color: Colors.black87,
                             ),
                           ),
                         ),
+                       ),
                       ],
                     ),
                   ),
@@ -145,7 +154,6 @@ class MoreScreen extends StatelessWidget {
                       SettingItemData(
                         title:  'Manage Managers',
                         subtitle: 'Add or delete managers',
-                        badge: '',
                         onTap: () {
                           Navigator.push(
                             context,
@@ -158,148 +166,7 @@ class MoreScreen extends StatelessWidget {
                       SettingItemData(
                         title: 'Super admin',
                         subtitle: 'Permissions: view, edit',
-                        badge: '',
-                        onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (context) {
-                              TextEditingController _textController = TextEditingController();
-                              return AlertDialog(
-                                backgroundColor: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16),
-                                ),
-                                contentPadding: EdgeInsets.all(16),
-                                content: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Container(
-                                  height: 45,
-                                  width: double.infinity,
-                                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                      child: Center(
-                                        child: const Text(
-                                          "Admin Details",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(height: 13),
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        "Admin name",
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(height: 5),
-                                    TextField(
-                                      controller: _textController,
-                                      decoration: InputDecoration(
-                                        labelText: 'Admin',
-                                        border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(12),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(height: 13),
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        "Email ID",
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(height: 5),
-                                    TextField(
-                                      controller: _textController,
-                                      decoration: InputDecoration(
-                                        labelText: 'admin@gmail.com',
-                                        border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(12),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(height: 13),
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Text(
-                                        "Password",
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(height: 5),
-                                    TextField(
-                                      controller: _textController,
-                                      decoration: InputDecoration(
-                                        labelText: '12345678',
-                                        border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(12),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-
-                                actions: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      String reason = _textController.text.trim();
-                                      if (reason.isNotEmpty) {
-                                        print("Reason: $reason");
-                                      }
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Container(
-                                      height: 45,
-                                      width: double.infinity,
-                                      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                                      decoration: BoxDecoration(
-                                        color: Colors.black,
-                                        borderRadius: BorderRadius.circular(20),
-                                      ),
-                                      child: Center(
-                                        child: const Text(
-                                          "Save",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              );
-                            },
-                          );
-                        },
+                        onTap: () {},
                       ),
                       SettingItemData(
                         title: 'Manager',

@@ -12,23 +12,25 @@ class ManagersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text(
+          "Managers",
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 20, right: 15),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              const SizedBox(height: 50),
-          Center(
-            child: Text(
-              "Managers",
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               CustomSearch(),
 
               SizedBox(height: 15),

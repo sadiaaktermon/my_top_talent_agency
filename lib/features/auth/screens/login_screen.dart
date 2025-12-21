@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const Text("Password"),
             const SizedBox(height: 6),
 
-            const CustomTextfield(hintText: "Password"),
+            const CustomTextfield(hintText: "Password",isPassword: true),
             const SizedBox(height: 10),
 
             Row(
